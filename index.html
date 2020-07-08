@@ -17,19 +17,27 @@
       <img src="images/logo-bonus.svg" alt="Rock, Paper, Scissors, lizard, Spock">
     </div>
     
-    <div class="score-board">
+    <div class="score-board" role="region">
       <span>Score</span>
       <span id="score">0</span>
     </div>
   </header>
 
+  <aside class="sound-switch" role="region">
+    <input id="switch" type="checkbox">
+    <label for="switch">BG-SOUND</label>
+  </aside>
+
+  
+
   <main class="main">
+  
     <section id="step1" >
-      <div class="icon scissors" role="button" data-choice="scissors"></div>
-      <div class="icon spock" role="button" data-choice="spock"></div>
-      <div class="icon paper" role="button" data-choice="paper"></div>
-      <div class="icon lizard" role="button" data-choice="lizard"></div>
-      <div class="icon rock" role="button" data-choice="rock"></div>
+      <div class="icon scissors" role="button" ></div>
+      <div class="icon spock" role="button" ></div>
+      <div class="icon paper" role="button" ></div>
+      <div class="icon lizard" role="button" ></div>
+      <div class="icon rock" role="button" ></div>
     </section>
 
     <section id="step2">
@@ -59,6 +67,31 @@
       <p><img src="images/image-rules-bonus.svg" alt="Game rules"></p>
     </div>
   </div>
+
+  <audio data-sound="bg-sound" loop>
+    <source src="sounds/bgSound.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio data-sound="user-choice">
+    <source src="sounds/userChoice.mp3" type="audio/mpeg">
+    <source src="sounds/userChoice.wav" type="audio/wav">
+  </audio>
+
+  <audio data-sound="you-win">
+    <source src="sounds/youWin.mp3" type="audio/mpeg">
+    <source src="sounds/youWin.wav" type="audio/wav">
+  </audio>
+
+  <audio data-sound="you-lose">
+    <source src="sounds/youLose.mp3" type="audio/mpeg">
+    <source src="sounds/youLose.wav" type="audio/wav">
+  </audio>
+
+  <audio data-sound="draw">
+    <source src="sounds/draw.mp3" type="audio/mpeg">
+    <source src="sounds/draw.wav" type="audio/wav">
+  </audio>
+
   <script src="script.js"></script>
 </body>
 </html>
