@@ -381,15 +381,12 @@ cursor: default;
   outline: none;
 }
 
-@media screen and (max-width: 42rem) {
-  .modal-content img {
-    width: 80%
-  }
-  body {
-    margin: 1rem;
-  }
- .header { 
-    max-width: 40rem;
+
+
+
+@media screen and (max-width: 53rem ){
+  .header { 
+    max-width: 44rem;
     height: 10rem;
     padding: 0.5rem 1rem;
   }
@@ -403,6 +400,51 @@ cursor: default;
   #score {
     font-size: 3.5rem;
   }
+  .picked {
+    font-size:1.5rem;
+    top: 19rem;
+    padding-bottom: .5rem;
+  }
+  #youPicked {
+    left: 1rem;
+  }
+  #housePicked {
+    right: 0.5rem;
+  }
+  #step-2 .icon {
+    top: -3rem;
+  }
+  #userIcon {
+    left:0;
+  }
+  #houseIcon {
+    right:0;
+  }
+  #playAgain {
+    top: 26rem;
+    margin: 1rem 0;
+  }
+  #winner {
+    top: 20rem;
+    font-size: 3rem;
+  }
+  
+}
+
+@media screen and (max-width: 42rem) {
+  .modal-content img {
+    width: 80%
+  }
+  body {
+    margin: 1rem;
+  }
+ .header { 
+    max-width: 40rem;
+    height: 10rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  
   .main {
     background-size: 24rem;
     background-position: 50% 4rem;
