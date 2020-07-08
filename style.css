@@ -402,8 +402,8 @@ cursor: default;
   }
   .picked {
     font-size:1.5rem;
-    top: 19rem;
-    padding-bottom: .5rem;
+    top: 17.5rem;
+    
   }
   #youPicked {
     left: 1rem;
@@ -427,6 +427,9 @@ cursor: default;
   #winner {
     top: 20rem;
     font-size: 3rem;
+  }
+  .icon  {
+    transform: scale(0.8);
   }
   
 }
