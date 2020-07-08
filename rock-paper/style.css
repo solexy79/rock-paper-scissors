@@ -1,0 +1,467 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+  background: radial-gradient(hsl(214, 43%, 35%), hsl(237, 49%, 15%));
+}
+
+body{
+  font-family: "Muli", Sans-serif !important;
+  font-weight: 600;
+  margin: 4rem 0;
+}
+
+.header{
+  display: flex;
+  width: 100%;
+  max-width: 76rem;
+  margin: 1rem auto;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  border: 2px solid hsl(217, 16%, 45%);
+  border-radius: 8px;
+}
+
+.score-board{
+  width: 12rem;
+  text-align: center;
+  line-height: 4.5rem;
+  background: hsl(0, 0%, 100%);
+  color: hsl(229, 25%, 31%);
+  border-radius: 8px;
+}
+.score-board > span {
+  display: block; 
+}
+.score-board > span:first-child {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+#score {
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+/* Sound Switch */
+.sound-switch{
+  position: absolute;
+  top: 10;
+  left: 50%;
+  width: 10rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  color: hsl(230, 22%, 74%);
+  justify-content: space-evenly;
+  align-items: center; 
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+#switch{
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none; 
+  width: 5rem;
+  height: 2rem;
+  background: hsl(189, 58%, 57%); 
+  outline: none;
+  border-radius: 2rem;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, .4);
+}
+
+#switch:checked{
+  background: linear-gradient(to right, hsl(189, 58%, 57%) , hsl(210, 78%, 56%));
+}
+
+#switch::before{
+  content: '';
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: #fff;
+  position: absolute;
+  border-radius: 50%;
+  top: -1px;
+  left: 0px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+  transition: left .5s;
+}
+
+#switch:checked::before{
+  left: 3rem;
+} 
+
+
+
+/* End Sound Switch */
+
+.main { 
+  position: relative;
+  width: 100%;
+  max-width: 42rem;
+  margin: 5.5rem auto 0;
+  height: 50rem;
+  background-image: url(../images/bg-pentagon.svg) ;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center 6rem;
+}
+
+.icon{
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background: #fff no-repeat center;
+  border: 1.4rem solid;
+  position: absolute;
+  cursor: pointer;
+  transition:all ease-out 300ms;
+}
+
+.icon:hover{
+  transform: scale(1.15);
+  opacity: .8;
+}
+
+.scissors{
+  top:0 ;
+  left: calc(50% - 6.5rem) ;
+  background-image: url(images/icon-scissors.svg);
+  border-color: hsl(40, 84%, 53%);
+  box-shadow: 0 6px 0 0 hsl(40, 94%, 40%), inset 0 6px 3px 0 hsl(240, 1%, 63%);
+}
+.spock {
+  top: 11rem;
+  left: calc(50% - 21rem);
+  background-image: url(../images/icon-spock.svg);
+  border-color: hsl(189, 58%, 57%);
+  box-shadow: 0 6px 0 0 hsl(189, 68%, 44%), inset 0 6px 3px 0 hsl(240, 1%, 63%);
+}
+.paper {
+  top: 11rem;
+  right: calc(50% - 21rem);
+  background-image: url(../images/icon-paper.svg);
+  border-color: hsl(231, 91%, 66%);
+  box-shadow: 0 6px 0 0 hsl(231, 94%, 42%), inset 0 6px 3px 0 hsl(240, 1%, 63%);
+}
+.lizard {
+  top: 29rem;
+  left: calc(50% - 15rem);
+  background-image: url(../images/icon-lizard.svg);
+  border-color: hsl(261, 63%, 63%);
+  box-shadow: 0 6px 0 0 hsl(261, 67%, 42%), inset 0 6px 3px 0 hsl(240, 1%, 63%);
+}
+.rock {
+  top: 29rem;
+  right: calc(50% - 15rem);
+  background-image: url(../images/icon-rock.svg);
+  border-color: hsl(350, 68%, 56%);
+  box-shadow: 0 6px 0 0 hsl(350, 94%, 32%), inset 0 6px 3px 0 hsl(240, 1%, 63%);
+}
+#openModal {
+  position: absolute;
+  top: 42rem;
+  left: 55vw;
+  font-family: "Muli", sans-serif;
+  background: transparent;
+  border: 1px solid hsl(217, 16%, 45%);
+  border-radius: 6px;
+  color: hsl(0, 0%, 100%);
+  width: 11rem;
+  margin: 2rem 0;
+  padding: 1rem 0;
+  font-weight: 700;
+  cursor: pointer;
+  transition: ease-out 300ms;
+  animation: anim 4s infinite;
+}
+#openModal:hover {
+  background: hsl(228, 100%, 85%);
+  transition: ease-in 300ms;
+}
+
+@keyframes anim{
+  0% {transform: translateY(0) }
+  20%{transform: translateY(0) }
+  40%{transform: translateY(-30px) }
+  50%{transform: translateY(0) }
+  60%{transform: translateY(-15px) }
+  80%{transform: translateY(0) }
+  100%{transform: translateY(0) }
+
+}
+
+
+#step2 {
+  display: none;
+}
+
+#step2 .icon {
+  width: 15rem;
+  height: 15rem;
+  top: 3rem;
+}
+#step2 .icon {
+cursor: default;
+}
+#step2 .icon:hover {
+  transform: scale(1);
+}
+#userIcon {
+  left:-20rem
+}
+#houseIcon {
+  left: auto;
+  right: -20rem
+}
+.picked {
+  position: absolute;
+  top: 0rem;
+  font-size: 2rem;
+  color: hsl(0, 0%, 100%);
+}
+#youPicked {
+  left: -20rem;
+}
+#housePicked {
+  right: -20rem;
+}
+
+
+
+#winner {
+  text-align: center;
+  width:40rem;
+  position: absolute;
+  top: 14rem;
+  left: calc(50% - 20rem);
+  font-size: 3rem;
+  color: hsl(0, 0%, 100%);
+}
+
+
+#playAgain {
+  position: absolute;
+  width: 20rem;
+  top: 22rem;
+  left: calc(50% - 10rem);
+  font: 2rem "Muli", sans-serif;
+  background: hsl(0, 0%, 100%);
+  border: 1px solid hsl(217, 16%, 45%);
+  border-radius: 6px;
+  color: hsl(229, 25%, 31%);
+  padding: 1rem 0;
+  font-weight: 700;
+  cursor: pointer;
+  transition: ease-in 300ms;
+}
+
+#winner, #playAgain {
+  display: block;
+  z-index: 2;
+}
+
+#playAgain:hover {
+  background: hsl(228, 100%, 85%);
+  color: hsl(228, 96%, 18%);
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 4;
+  padding-top: 5rem;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: hsl(0, 0%, 0%);
+  background-color: hsla(0, 0%, 0%, 0.8);
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from {
+    top: -50rem;
+    opacity: 0;
+  }
+  to {
+    top: 0rem;
+    opacity: 1;
+  }
+}
+
+@keyframes anim{
+  0% {transform: translateY(0) }
+  20%{transform: translateY(0) }
+  40%{transform: translateY(-25px) }
+  50%{transform: translateY(0) }
+  60%{transform: translateY(-15px) }
+  80%{transform: translateY(0) }
+  100%{transform: translateY(0) }
+
+}
+
+#modalContent {
+  position: relative;
+  background-color: hsl(0, 0%, 100%);
+  margin: auto;
+  width: 100%;
+  max-width: 40rem;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid hsl(0, 0%, 53%);
+  border-radius: 10px;
+  animation-name: animateshow;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+#modalContent img {
+  width: 100%;
+}
+#closeModal {
+  color: hsl(0, 0%, 67%);
+  float: right;
+  font-size: 5rem;
+  font-weight: bold;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  background: none;
+  border: none;
+}
+.attribution { 
+  font-size: 1.4rem;
+  margin: 4rem 0;
+  color: hsl(0, 0%, 100%);
+  text-align: center; 
+}
+.attribution a, .attribution a:visited { 
+  color: hsl(228, 79%, 72%); 
+}
+.attribution a:hover { 
+  color: hsl(228, 100%, 85%);
+  text-decoration: none; 
+}
+
+#closeModal:hover,
+#closeModal:focus {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+@media screen and (max-width: 42rem) {
+  .modal-content img {
+    width: 80%
+  }
+  body {
+    margin: 1rem;
+  }
+ .header { 
+    max-width: 40rem;
+    height: 10rem;
+    padding: 0.5rem 1rem;
+  }
+  .logo img {
+    height: 9rem !important;
+  }
+  .score {
+    height: 8.0rem;
+    line-height: normal;
+  }
+  #score {
+    font-size: 3.5rem;
+  }
+  .main {
+    background-size: 24rem;
+    background-position: 50% 4rem;
+    height: 30.5rem;
+  }
+  .icon  {
+    transform: scale(0.7);
+  }
+  .icon:hover {
+    transform: scale(0.9);
+    transition: ease-in 300ms;
+    opacity: 0.85;
+  }
+  .scissors {
+    top: -2rem;
+    left: calc(50% - 5.5rem);
+  }
+  .spock {
+    top: 6rem;
+    left: calc(50% - 17.5rem);
+  }
+  .paper {
+    top: 6rem;
+    right: calc(50% - 17.5rem);
+  }
+  .lizard {
+    top: 19rem;
+    left: calc(50% - 12.5rem);
+  }
+  .rock {
+    top: 19rem;
+    right: calc(50% - 12.5rem);
+  }
+
+
+  .picked {
+    font-size:1.5rem;
+    top: 17rem;
+  }
+  #youPicked {
+    left: 1rem;
+  }
+  #housePicked {
+    right: 0.5rem;
+  }
+  #step-2 .icon {
+    top: -3rem;
+  }
+  #userIcon {
+    left:0;
+  }
+  #houseIcon {
+    right:0;
+  }
+  #playAgain {
+    top: 26rem;
+    margin: 1rem 0;
+  }
+  #winner {
+    top: 20rem;
+    font-size: 3rem;
+  }
+  
+  #openModal {
+    top:33rem;
+    left: calc(50% - 55px);
+  }
+  .main {
+    height:36rem;
+}
+}
+/* End Media Queries */
+
+
+
+
+
+
+
+
+
+
+
